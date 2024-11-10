@@ -1,0 +1,77 @@
+import java.util.Scanner;
+public class V1Q3 {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter a integer greater than 1: ");
+        int num = sc.nextInt();
+
+        // Check if the number is prime
+        int count=0, pnum=0;
+        for (int i=1; i<=num; i++){
+            if(num%i==0){
+                count++;
+                pnum+=i;
+            }
+        }
+            if (count==2) {
+                System.out.println("Integer is a prime number");
+            } else{
+                System.out.println("Integer is not a prime number, it has "+count+" factors");
+            }
+            
+            //If prime check if the num is perfect number
+            if (pnum==num){
+                System.out.println(num+" is a perfect number.");
+                
+            //If not prime, find num_factor, list_factor, sum_factor, product_factor 
+            } else{ 
+                int sum=0;
+                long product=1;
+                
+                System.out.println("The factors of this integer are: ");
+                for (int i = 1; i <= num; i++) {
+                if (num%i==0) {
+                    sum+= i;
+                    product*= i;
+                    
+                    if(i==num){
+                        System.out.print(i);
+                        break;
+                    }
+                    System.out.print(i + ", ");
+                }
+                
+            }
+            
+            System.out.println("\nThe sum of the factors is " + sum);
+            if (product<=Long.MAX_VALUE){
+                System.out.println("The product of the factors is too large to display");
+            }else{
+                System.out.println("The product of the factors is " + product);
+            }
+            
+            // Check for perfect number (not prime num)
+            if(sum==num){
+                System.out.println(num+" is a perfect number");
+            }else{
+                System.out.println(num+" is not a perfect number.");
+            }
+           
+            
+            // List prime numbers between 2 and the given number
+             System.out.print("Prime numbers between 2 and " + num + ": ");
+        for (int i = 2; i <= num; i++) {
+            int count2=0;
+            for (int j = 1; j <=i; j++) {
+                if (i % j == 0) {
+                    count2++;
+                }
+            }
+            if (count2 == 2) {
+                    System.out.print(i+", ");
+           }
+         }
+      }
+    }
+}
