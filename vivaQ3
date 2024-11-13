@@ -50,9 +50,9 @@ public class V1Q3 {
             System.out.println("\nThe sum of the factors is " + sum);
 
             if (product>=Long.MAX_VALUE) {
-                System.out.println("The product of the factors is " + product);
-            } else {
                 System.out.println("The product of the factors is too large to display.");
+            } else {
+                System.out.println("The product of the factors is "+product);
             }
 
             // Check for perfect number (for non-prime numbers)
